@@ -1,0 +1,17 @@
+.button {
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    display: inline;
+    min-width: 100px;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.button:hover {
+    filter: brightness(85%);
+}
+
+.button:active {
+    filter: brightness(70%);
+}

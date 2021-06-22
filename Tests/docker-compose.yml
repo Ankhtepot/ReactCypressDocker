@@ -1,0 +1,24 @@
+version: '3.2'
+services:
+  # this is the web application we are going to test
+  fe:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    environment:
+      - PORT=3000
+  # Cypress container
+  cypress:
+    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
+    image: "cypress/included:7.5.0"
+    depends_on:
+      - fe
+    environment:
+      # pass base url to test pointing at the web application
+      - CYPRESS_baseUrl=http://fe:3000
+      # do not record videos
+      - CYPRESS_VIDEO=false
+    # share the current folder as volume to avoid copying
+    working_dir: /e2e
+    volumes:
+      - ./:/e2e

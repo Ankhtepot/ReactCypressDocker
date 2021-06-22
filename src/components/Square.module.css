@@ -1,0 +1,9 @@
+.square {
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 15px 18px #001117;
+    box-shadow: 0 0 15px 18px #001117;
+    margin: 5rem 2rem;
+    min-height: 10rem;
+}
